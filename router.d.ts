@@ -1,12 +1,13 @@
-declare const appRouter: import("@trpc/server/dist/unstable-core-do-not-import").BuiltRouter<{
+declare const appRouter: import("@trpc/server").TRPCBuiltRouter<{
     ctx: object;
     meta: object;
-    errorShape: import("@trpc/server/dist/unstable-core-do-not-import").DefaultErrorShape;
+    errorShape: import("@trpc/server").TRPCDefaultErrorShape;
     transformer: false;
-}, import("@trpc/server/dist/unstable-core-do-not-import").DecorateCreateRouterOptions<{
+}, import("@trpc/server").TRPCDecorateCreateRouterOptions<{
     greeting: import("@trpc/server").TRPCQueryProcedure<{
         input: void;
         output: string;
+        meta: object;
     }>;
 }>>;
 export type AppRouter = typeof appRouter;
